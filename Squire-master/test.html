@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="testcs.css">
+    <script type="text/javascript" src="jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+        var n = 1;
+
+        function draw() {
+            var canvas = document.getElementById('tutorial');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext("2d");
+                //ctx.fillStyle = "rgb(200,0,0)";
+                //ctx.fillRect(n, n, 55, 50);
+                //ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+                //ctx.fillRect(30* n, 30* n, 55, 50);
+                //n++;
+                //setTimeout(draw, 100);
+                //ctx.fillRect(25, 25, 100, 100);
+                //ctx.clearRect(45, 45, 60, 60);
+                //ctx.strokeRect(50, 50, 50, 50);
+                //ctx.beginPath();
+                //ctx.moveTo(75, 50);
+                //ctx.lineTo(100, 75);
+                //ctx.lineTo(100, 25);
+                // ctx.fillStyle = "rgb(200,0,0)";
+                //ctx.fill();
+                ctx.beginPath();
+                ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle 
+                ctx.moveTo(110, 75);
+                ctx.arc(75, 75, 35, 0, Math.PI, false); // Mouth (clockwise) 
+                ctx.moveTo(65, 65);
+                ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Left eye 
+                ctx.moveTo(95, 65);
+                ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Right eye 
+                ctx.stroke(); //thegoneheart 完整例子   
+                ctx.beginPath();
+                ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle 
+                ctx.moveTo(110, 75);
+                ctx.arc(75, 75, 35, 0, Math.PI, false); // Mouth (clockwise) 
+                ctx.moveTo(65, 65);
+                ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Left eye 
+                ctx.moveTo(95, 65);
+                ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Right eye 
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(40, 75);
+                ctx.lineTo(60, 65);
+                ctx.lineTo(90, 65);
+                ctx.moveTo(110, 75);
+                ctx.lineTo(125, 75);
+                ctx.stroke();
+
+            }
+        }
+
+        /*function drawLine {
+             var canvas = document.getElementById('tutorial');
+             if (canvas.getContext) {
+                 var cl = canvas.getContext("2d");
+                 cl.fillStyle = "rgb(200,0,0,0.5)";
+                 cl.fillRect(n, n, n + 1, n + 2);
+                 n++;
+                 setTimeout(drawLine, 100);
+             }
+         }*/
+
+        function c(css) {
+            menu.className = css;
+        }
+
+        function link(act, txt) {
+            document.write("<div class=link onMouseOver=this.className='overlink' onMouseOut=this.className='link' style= 'padding-left:16;padding-top:1;padding-bottom:1' onclick=" + act + ">" + txt + "</div>")
+        }
+
+        function showmenu() {
+            var rightedge = document.body.clientWidth - event.clientX - 100
+            var bottomedge = document.body.clientHeight - event.clientY - 25
+            if (rightedge < menu.offsetWidth)
+                menu.style.left = document.body.scrollLeft + event.clientX - menu.offsetWidth;
+            else
+                menu.style.left = document.body.scrollLeft + event.clientX
+            if (bottomedge < menu.offsetHeight)
+                menu.style.top = document.body.scrollTop + event.clientY - menu.offsetHeight
+            else
+                menu.style.top = document.body.scrollTop + event.clientY
+            menu.style.visibility = "visible"
+            return false
+        }
+
+        function hidemenu() {
+            menu.style.visibility = "hidden"
+        }
+
+        function pop(win) {
+            window.open(win, '', '')
+        }
+    </script>
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+        
+        .style1 {
+            font-size: 14pt;
+            color: #FF0000;
+        }
+    </style>
+</head>
+
+<body onload="draw();">
+    <p>
+        <a href="http://www.baidu.com" target="_blank">
+    这是一个超级连接的标签
+</a>
+    </p>
+    <br>
+    <p>
+        <!--abbr标签用于缩写表示鼠标悬浮显示详细信息-->
+        The <abbr title="People's Republic of China">PRC</abbr> was founded in 1949.
+    </p>
+    <p>测试样式 this is a css ！</p>
+
+    <div id="div1" contentEditable="true"></div>
+    <br>
+
+    <div id="div2" contentEditable="true"></div>
+    <br>
+
+    <div contentEditable="true" id="div3"></div>
+    <br>
+
+    <canvas id="tutorial" width="150" height="150"></canvas>
+    <details>
+        <p>明日科技，成立于1998年....</p>
+    </details>
+
+    <details>
+        <summary>明日科技</summary>
+        <img src="images/1.png" />
+        <div>
+            <h3>吉林省明日科技有限公司</h3>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;吉林省明日科技有限公司是一家以计算机软件技术为核心的高科技型企业，公司创建于2000年12月，是专业的应用软件开发商和服务提供商。多年来始终致力于行业管理软件开发、数字化出版物开发制作、计算机网络系统综合应用、行业电子商务网站开发等领域，涉及生产、管理、控制、仓贮、物流、营销、服务等行业。公司拥有软件开发和项目实施方面的资深专家和学习型技术团队，公司的开发团队不仅是开拓进取的技术实践者，更致力于成为技术的普及和传播者，并以软件工程为指导思想建立了软件研发和销售服务体系。公司基于长期研发投入和丰富的行业经验，本着“让客户轻松工作，同客户共同成功”的奋斗目标，努力发挥“专业、易用、高效”的产品优势，竭诚为广大用户提供优质的产品和服务。
+            </p>
+        </div>
+    </details>
+
+    <br>
+    <menu>
+        <li>
+            <img src="2.png"></img>
+            <span>Firefox</span>
+        </li>
+        <li>
+            <img src="3.png"></img>
+            <span>Internet Explorer</span>
+        </li>
+        <li>
+            <img src="4.png"></img>
+            <span>Opera</span>
+        </li>
+    </menu>
+
+    <div id=menu class=up style="text-align: left;position: absolute; visibility: hidden; width: 125px; z-index: 200;padding:1px">
+        <script>
+            link('pop("http://www.mingrisoft.com")', '明日科技图书网');
+            link('pop("http://www.ptpress.com")', '人民邮电出版社');
+            link('pop("http://www.mingrisoft.com")', '明日科技软件网');
+            link('pop("http://www.cccxy.com")', '长春程序员网站');
+            link('pop("http://www.cccxy.com")', '明日编程词典网');
+        </script>
+    </div>
+    <script language=javascript>
+        if (document.all && window.print) {
+            document.oncontextmenu = showmenu
+            document.body.onclick = hidemenu
+        }
+    </script>
+    <table width="825" height="409" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <td background="images/bg.gif">
+                <table width="825" height="148" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td height="26">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td height="122" align="center"><span class="style1">请单击鼠标右键！</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
